@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Space tourism website</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bellefair&display=swap" rel="stylesheet">
+  
+  <link rel="preload" href="./assets/destination/background-destination-mobile.jpg" media="(max-width: 47.9rem)" as="image" />
+  <link rel="preload" href="./assets/destination/background-destination-tablet.jpg" media="(min-width: 48rem) and (max-width: 64.9rem)" as="image" />
+  <link rel="preload" href="./assets/destination/background-destination-desktop.jpg" media="(min-width: 65rem)" as="image" />
+  
+  <link rel="preload" href="./assets/crew/background-crew-mobile.jpg" media="(max-width: 47.9rem)" as="image" />
+  <link rel="preload" href="./assets/crew/background-crew-tablet.jpg" media="(min-width: 48rem) and (max-width: 64.9rem)" as="image" />
+  <link rel="preload" href="./assets/crew/background-crew-desktop.jpg" media="(min-width: 65rem)" as="image" />
+  
+  <link rel="preload" href="./assets/technology/background-technology-mobile.jpg" media="(max-width: 47.9rem)" as="image" />
+  <link rel="preload" href="./assets/technology/background-technology-tablet.jpg" media="(min-width: 48rem) and (max-width: 64.9rem)" as="image" />
+  <link rel="preload" href="./assets/technology/background-technology-desktop.jpg" media="(min-width: 65rem)" as="image" />
+  
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+  <script defer src="./script.js"></script>
+</head>
+
+<body data-overflow="visible">
+  
+  <div role="presentation" class="[ u-width-1 ] [ b-background ]">
+    <picture id="background">
+      <source srcset="./assets/home/background-home-desktop.jpg" media="(min-width: 65rem)" />
+      <source srcset="./assets/home/background-home-tablet.jpg" media="(min-width: 48rem)" />
+      <img class="[ u-width-1 ] [ b-background__img ]" src="./assets/home/background-home-mobile.jpg" alt=""/>
+    </picture>
+    
+    <picture id="hidden-background">
+      <source srcset="./assets/home/background-home-desktop.jpg" media="(min-width: 65rem)" />
+      <source srcset="./assets/home/background-home-tablet.jpg" media="(min-width: 48rem)" />
+      <img class="[ u-width-1 ] [ b-background__hidden-img ]" src="./assets/home/background-home-mobile.jpg" alt="" data-animation="none"/>
+    </picture>
+  </div>
+  
+  <header class="[ c-flex-row c-justify-con-sb c-align-itms-center ] [ u-width-2 u-pd-block-1-5 ] [ b-header ]">
+    
+    <div role="presentation" class="[ b-header__btn-container ]">
+      <button id="logo-btn" class="[ u-cursor-pointer ] [ u-bg-transparent ]" type="button" aria-label="home">
+        <img class="[ b-header__logo ]" src="./assets/shared/logo.svg" alt="space tourism logo" />
+      </button>
+    </div>
+    
+    <button id="nav-menu-btn" class="[ u-bg-transparent ] [ b-menu-btn ]" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="main menu" data-desktop="hidden">
+      <img src="./assets/shared/icon-hamburger.svg" alt="" />
+    </button>
+    
+    <nav id="nav-menu" class="[ c-flex-col ] [ b-nav ]" aria-label="header menu" data-hidden="true" data-animation="none">
+      <div role="presentation" class="[ c-flex-col c-flex-row-mq ] [ b-nav__menu ]">
+        <button disabled id="home-btn" class="[ u-cursor-pointer ]" type="button" aria-expanded="true" aria-controls="home" data-state="selected"><span aria-hidden="true">00</span> Home</button>
+        <button id="destination-btn" class="[ u-cursor-pointer ]" type="button" aria-expanded="false" aria-controls="destination" data-state="none"><span aria-hidden="true">01</span> Destination</button>
+        <button id="crew-btn" class="[ u-cursor-pointer ]" type="button" aria-expanded="false" aria-controls="crew" data-state="none"><span aria-hidden="true">02</span> Crew</button>
+        <button id="technology-btn" class="[ u-cursor-pointer ]" type="button" aria-expanded="false" aria-controls="technology" data-state="none"><span aria-hidden="true">03</span> Technology</button>
+      </div>
+    </nav>
+  </header>
+  
+  <main class="[ c-flex-col c-align-itms-center ]">
+    <article id="home" class="[ c-flex-col c-align-itms-center c-flex-row-1-mq c-justify-con-sb-mq ] [ u-width-3 u-height-1 ] [ b-home ]" data-hidden="false" data-animation="none">
+      
+      <div role="presentation" class="[ c-flex-col c-align-itms-center c-align-itms-fs-mq c-align-self-fe-mq ] [ b-home__text ]">
+        <h1 class="[ c-flex-col c-align-itms-center c-align-itms-fs-mq ] [ u-text-upper u-clr-light-blue ]">
+          So, you want to travel to
+          <span class="[ u-font-br u-text-upper u-clr-white ]">Space</span>
+        </h1>
+        <p class="[ u-font-bar u-text-center u-clr-light-blue u-text-left-mq ] [ b-home__description ]">Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!</p>
+      </div>
+      
+      <button id="explore" aria-controls="destination" type="button" class="[ c-align-self-fe-mq ] [ u-font-br u-text-upper u-clr-dark-blue u-cursor-pointer ] [ b-home__btn ]">Explore</button>
+    </article>
+    
+    <article id="destination" class="[ c-flex-col c-align-itms-center ] [ u-width-3 u-height-1 ] [ b-destination ]" data-hidden="true" data-animation="none">
+      
+      <h2 class="[ c-align-self-fs-mq ] [ u-text-upper ]"><span aria-hidden="true">01</span> Pick your destination</h2>
+      
+      <div role="presentation" class="[ c-flex-col c-align-itms-center c-gap-2 c-grid-mq-1 c-gap-2-mq c-place-itms-center-mq ] [ u-width-1 u-height-1 ]">
+        
+        <div role="presentation" class="[ b-destination__img-container ]" data-rotate="true">
+          <picture id="dst-img">
+            <source srcset="./assets/destination/image-moon.webp" type="webp" />
+            <img class="[ u-vertical-align-sub ] [ b-destination__img ]" src="./assets/destination/image-moon.png" alt=""/>
+          </picture> 
+          
+          <picture id="dst-hidden-img">
+            <source srcset="./assets/destination/image-moon.webp" type="webp" />
+            <img class="[ b-destination__hidden-img ]" src="./assets/destination/image-moon.png" alt="" data-animation="none"/>
+          </picture>
+        </div>
+        
+        <div role="presentation" class="[ u-width-4 u-width-1-mq ]">
+          <nav id="destination-tab" aria-label="planets" class="[ c-flex-row c-gap-2 c-justify-con-center c-justify-con-fs-mq ] [ b-destination__nav ]">
+            <button disabled aria-expanded="true" aria-controls="destination-planet" type="button" value="0" class="[ c-flex-row c-align-itms-fs ] [ u-font-bcr u-text-upper u-clr-light-blue u-bg-transparent u-cursor-pointer ]" data-state="selected">Moon</button>
+            <button aria-expanded="false" aria-controls="destination-planet" type="button" value="1" class="[ c-flex-row c-align-itms-fs ] [ u-font-bcr u-text-upper u-clr-light-blue u-bg-transparent u-cursor-pointer ]" data-state="none">Mars</button>
+            <button aria-expanded="false" aria-controls="destination-planet" type="button" value="2" class="[ c-flex-row c-align-itms-fs ] [ u-font-bcr u-text-upper u-clr-light-blue u-bg-transparent u-cursor-pointer ]" data-state="none">Europa</button>
+            <button aria-expanded="false" aria-controls="destination-planet" type="button" value="3" class="[ c-flex-row c-align-itms-fs ] [ u-font-bcr u-text-upper u-clr-light-blue u-bg-transparent u-cursor-pointer ]" data-state="none">Titan</button>
+          </nav>
+          
+          <div role="presentation" class="[ b-destination__text-container ]">
+            
+            <section id="destination-planet" aria-live="polite" aria-atomic="true" class="[ c-flex-col c-align-itms-center c-align-itms-fs-mq ] [ b-destination__main-text ]">
+              <h3 id="dst-title" class="[ u-font-br u-text-upper ]" data-animation="none">Moon</h3>
+              <p id="dst-description" class="[ u-min-height-1 u-font-bar u-fs-1 u-text-center u-line-height-1 u-mg-block-st-1 u-clr-light-blue u-fs-2-mq u-fs-2-mq-2 u-text-left-mq ]" data-animation="none">See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
+              
+              <footer class="[ c-flex-col c-justify-con-center c-row-gap-1 c-flex-row-mq c-justify-con-se-mq c-grid-mq-1 ] [ u-width-1 u-mg-block-st-2 u-pd-block-1 u-border-top ]">
+                <div role="presentation" class="[ c-flex-col c-align-itms-center c-row-gap-2 c-align-itms-fs-mq ]">
+                  <p class="[ u-fs-2 u-text-upper u-clr-light-blue ]">Avg. distance</p>
+                  <p id="dst-distance" class="[ u-fs-3 u-font-br u-text-upper ]" data-animation="none">384,400 km</p>
+                </div>
+                <div role="presentation" class="[ c-flex-col c-align-itms-center c-row-gap-2 c-align-itms-fs-mq ]">
+                  <p class="[ u-fs-2 u-text-upper u-clr-light-blue ]">Est. travel time</p>
+                  <p id="dst-travel" class="[ u-fs-3 u-font-br u-text-upper ]" data-animation="none">3 days</p>
+                </div>
+              </footer>
+            </section>
+            
+            <section aria-hidden="true" class="[ c-flex-col c-align-itms-center c-align-itms-fs-mq ] [ b-destination__hidden-text ]">
+              <h3 id="dst-hidden-title" class="[ u-font-br u-text-upper ]" data-animation="none">Moon</h3>
+              <p id="dst-hidden-description" class="[ u-min-height-1 u-font-bar u-fs-1 u-text-center u-line-height-1 u-mg-block-st-1 u-clr-light-blue u-fs-2-mq u-fs-2-mq-2 u-text-left-mq ]" data-animation="none">See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.</p>
+              
+              <footer class="[ c-flex-col c-justify-con-center c-row-gap-1 c-flex-row-mq c-justify-con-se-mq c-grid-mq-1 ] [ u-width-1 u-mg-block-st-2 u-pd-block-1 u-border-top ]">
+                <div role="presentation" class="[ c-flex-col c-align-itms-center c-row-gap-2 c-align-itms-fs-mq ]">
+                  <p class="[ u-fs-2 u-text-upper u-clr-light-blue ]">Avg. distance</p>
+                  <p id="dst-hidden-distance" class="[ u-fs-3 u-font-br u-text-upper ]" data-animation="none">384,400 km</p>
+                </div>
+                <div role="presentation" class="[ c-flex-col c-align-itms-center c-row-gap-2 c-align-itms-fs-mq ]">
+                  <p class="[ u-fs-2 u-text-upper u-clr-light-blue ]">Est. travel time</p>
+                  <p id="dst-hidden-travel" class="[ u-fs-3 u-font-br u-text-upper ]" data-animation="none">3 days</p>
+                </div>
+              </footer>
+            </section>
+            
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <article id="crew" class="[ c-flex-col c-align-itms-center c-gap-2 c-grid-rows-mq c-gap-3-mq ] [ u-width-3 u-height-1 ] [ b-crew ]" data-hidden="true" data-animation="none">
+      
+      <h2 class="[ c-align-self-fs-mq ] [ u-text-upper ]"><span aria-hidden="true">02</span> Meet your crew</h2>
+      
+      <div id="crew-container" role="presentation" class="[ c-flex-col c-gap-4 c-grid-mq-1 ] [ b-crew__container ]">
+        <div role="presentation" class="[ c-flex-col c-row-gap-1 c-justify-con-center-mq ]">
+          <div role="presentation" class="[ b-crew__text-container ]">
+            
+            <section id="crew-previous" aria-hidden="true" class="[ c-flex-col c-align-itms-center c-row-gap-1 c-row-gap-1-mq c-align-itms-fs-mq ] [ b-crew__previous ]" data-animation="none">
+              <h3 class="[ c-flex-col c-align-itms-center c-gap-3 c-gap-1-mq c-align-itms-fs-mq ] [ u-font-br u-text-upper ]">
+                <span id="crew-prev-role" role="presentation" class="[ u-clr-white-low ] [ b-crew__role ]">Flight Engineer</span>
+                <span id="crew-prev-name" role="presentation">Anousheh Ansari</span>
+              </h3>
+              <p id="crew-prev-bio" class="[ u-pd-block1 u-font-bar u-fs-1 u-text-center u-line-height-1 u-clr-light-blue u-fs-1-mq u-text-left-mq ] [ b-crew__bio ]">Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space.</p>
+            </section>
+            
+            <section id="main-crew" aria-live="polite" aria-atomic="true" class="[ c-flex-col c-align-itms-center c-row-gap-1 c-row-gap-1-mq c-align-itms-fs-mq ] [ b-crew__main ]" data-animation="none">
+              <h3 class="[ c-flex-col c-align-itms-center c-gap-3 c-gap-1-mq c-align-itms-fs-mq ] [ u-font-br u-text-upper ]">
+                <span id="crew-role" role="presentation" class="[ u-clr-white-low ] [ b-crew__role ]">Commander</span>
+                <span id="crew-name" role="presentation">Douglas Hurley</span>
+              </h3>
+              <p id="crew-bio" class="[ u-pd-block1 u-font-bar u-fs-1 u-text-center u-line-height-1 u-clr-light-blue u-fs-1-mq u-text-left-mq ] [ b-crew__bio ]">Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.</p>
+            </section>
+            
+            <section id="crew-next" aria-hidden="true" class="[ c-flex-col c-align-itms-center c-row-gap-1 c-row-gap-1-mq c-align-itms-fs-mq ] [ b-crew__next ]" data-animation="none">
+              <h3 class="[ c-flex-col c-align-itms-center c-gap-3 c-gap-1-mq c-align-itms-fs-mq ] [ u-font-br u-text-upper ]">
+                <span id="crew-next-role" role="presentation" class="[ u-clr-white-low ] [ b-crew__role ]">Mission Specialist</span>
+                <span id="crew-next-name" role="presentation">Mark Shuttleworth</span>
+              </h3>
+              <p id="crew-next-bio" class="[ u-pd-block1 u-font-bar u-fs-1 u-text-center u-line-height-1 u-clr-light-blue u-fs-1-mq u-text-left-mq ] [ b-crew__bio ]">Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.</p>
+            </section>
+            
+          </div>
+          
+          <nav id="crew-page" aria-label="crew members" class="[ c-flex-row c-justify-con-center c-gap-1 c-gap-2-mq c-justify-con-fs-mq c-align-self-fs-1-mq ] [ b-crew__page-nav ]">
+            <button class="[ u-cursor-pointer ]" type="button" value="0" data-state="selected" aria-label="Commander" aria-expanded="true" aria-controls="main-crew"></button>
+            <button class="[ u-cursor-pointer ]" type="button" value="1" data-state="none" aria-label="Mission Specialist" aria-expanded="false" aria-controls="main-crew"></button>
+            <button class="[ u-cursor-pointer ]" type="button" value="2" data-state="none" aria-label="Pilot" aria-expanded="false" aria-controls="main-crew"></button>
+            <button class="[ u-cursor-pointer ]" type="button" value="3" data-state="none" aria-label="Flight Engineer" aria-expanded="false" aria-controls="main-crew"></button>
+          </nav>
+        </div>
+        
+        <div role="presentation" class="[ c-flex-row c-justify-con-center c-align-itms-center ]">
+          <picture id="crew-img">
+            <source src="./assets/crew/image-douglas-hurley.webp" type="webp"/>
+            <img class="[ b-crew__img ]" src="./assets/crew/image-douglas-hurley.png" alt="" data-animation="none"/>
+          </picture>
+        </div>
+      </div>
+    </article>
+    
+    <article id="technology" class="[ c-flex-col c-align-itms-center c-row-gap-1 ] [ u-width-1 u-height-1 ] [ b-technology ]" data-hidden="true" data-animation="none">
+      
+      <h2 class="[ u-width-3 u-text-upper u-text-center u-text-left-mq-1 ]"><span aria-hidden="true">03</span> Space launch 101</h2>
+      
+      <div role="presentation" class="[ c-grid c-gap-2 c-align-self-fe-mq c-grid-mq-1 ] [ u-width-5 u-height-1 ]">
+        <div role="presentation" class="[ c-align-self-center-mq ] [ b-technology__img-container ]">
+          <picture id="technology-hidden-img">
+            <source srcset="./assets/technology/image-spaceport-desktop.jpg" media="(min-width: 65rem)" />
+            <source srcset="./assets/technology/image-spaceport-tablet.jpg" media="(min-width: 48rem)" />
+            <img class="[ b-technology__hidden-img ]" src="./assets/technology/image-spaceport-mobile.jpg" alt="" data-animation="none" />
+          </picture>
+          
+          <picture id="technology-main-img">
+            <source srcset="./assets/technology/image-launch-vehicle-desktop.jpg" media="(min-width: 65rem)" />
+            <source srcset="./assets/technology/image-launch-vehicle-tablet.jpg" media="(min-width: 48rem)" />
+            <img class="[ u-width-1 u-vertical-align-sub ] [ b-technology__main-img ]" src="./assets/technology/image-launch-vehicle-mobile.jpg" alt="" data-animation="none"/>
+          </picture>
+        </div>
+        <div role="presentation" class="[ c-flex-col c-align-itms-center c-gap-4 c-grid-pos-1-mq c-flex-row-1-mq c-gap-5-mq c-align-self-center-mq ] [ b-technology__nav-text-container ]">
+          
+          <nav id="technology-nav" aria-label="vehicles" class="[ c-flex-row c-gap-1 c-flex-col-mq c-gap-4-mq ] [ b-technology__nav ]">
+            <button disabled aria-expanded="true" aria-controls="technology-main-text" class="[ u-font-br u-clr-white ] [ u-cursor-pointer ]" type="button" value="0" data-state="selected">1</button>
+            <button aria-expanded="false" aria-controls="technology-main-text" class="[ u-font-br u-clr-white ] [ u-cursor-pointer ]" type="button" value="1" data-state="none">2</button>
+            <button aria-expanded="false" aria-controls="technology-main-text" class="[ u-font-br u-clr-white ] [ u-cursor-pointer ]" type="button" value="2" data-state="none">3</button>
+          </nav>
+          
+          <div role="presentation" class="[ b-technology__text-container ]">
+            
+            <section id="technology-hidden-text" aria-hidden="true" class="[ c-flex-col c-gap-1 c-gap-3-mq ] [ b-technology__hidden-text ]" data-animation="none">
+              <h3 class="[ c-flex-col c-align-itms-center c-gap-1 c-align-itms-fs-mq ] [ u-font-br u-text-upper ]">
+                <span role="presentation" class="[ u-clr-white-low ] [ b-technology__term ]">The terminology...</span>
+                <span id="technology-hidden-name" role="presentation">Space capsule</span>
+              </h3>
+              <p id="technology-hidden-description" class="[ u-font-bar u-fs-1 u-text-center u-line-height-1 u-clr-light-blue u-fs-1-mq u-text-left-mq ]">A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained.</p>
+            </section>
+            
+            <section id="technology-main-text" aria-live="polite" aria-atomic="true" class="[ c-flex-col c-gap-1 c-gap-3-mq ] [ b-technology__main-text ]" data-animation="none">
+              <h3 class="[ c-flex-col c-align-itms-center c-gap-1 c-align-itms-fs-mq ] [ u-font-br u-text-upper ]">
+                <span role="presentation" class="[ u-clr-white-low ] [ b-technology__term ]">The terminology...</span>
+                <span id="technology-name" role="presentation">Launch vehicle</span>
+              </h3>
+              <p id="technology-description" class="[ u-font-bar u-fs-1 u-text-center u-line-height-1 u-clr-light-blue u-fs-1-mq u-text-left-mq ]">A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!</p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+</body>
+</html>
