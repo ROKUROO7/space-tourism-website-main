@@ -155,7 +155,6 @@ const populateDOM = async () => {
       navOptionsNo = 1
       storeImgs = []
       for (let key in Object.keys(data["destinations"])) {
-        storeImgs.push(data["destinations"][key].images.webp)
         storeImgs.push(data["destinations"][key].images.png)
       }
       storeImgs.forEach(img => preloadImage(img))
@@ -191,7 +190,6 @@ const populateDOM = async () => {
     navOptionsNo = 2
     storeImgs = []
     for (let key in Object.keys(data["crew"])) {
-      storeImgs.push(data["crew"][key].images.webp)
       storeImgs.push(data["crew"][key].images.png)
     }
     storeImgs.forEach(img => preloadImage(img))
