@@ -1108,7 +1108,7 @@ h2 > span {
   border: thin solid var(--white-lower);
   background-color: transparent;
   transition: 0.5s ease color, 0.5s ease background-color;
-  will-change: color background-color;
+  will-change: color, background-color;
   
   @media screen and (min-width: 48rem) {
     font-size: var(--space-1-5);
